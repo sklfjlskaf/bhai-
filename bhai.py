@@ -312,30 +312,6 @@ def bgmi_command(message):
         )
         return
 
-    # Check if user is exempted from cooldowns, limits, and feedback requirements
-    if user_id not in EXEMPTED_USERS:
-        # Check if user is in cooldown
-        if user_id in user_cooldowns:
-            cooldown_time = user_cooldowns[user_id]
-            if datetime.now() < cooldown_time:
-                remaining_time = (cooldown_time - datetime.now()).seconds
-                bot.send_message(
-                    message.chat.id,
-                    f"⚠️⚠️ 𝙃𝙞 {message.from_user.first_name}, 𝙮𝙤𝙪 𝙖𝙧𝙚 𝙘𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮 𝙤𝙣 𝙘𝙤𝙤𝙡𝙙𝙤𝙬𝙣. 𝙋𝙡𝙚𝙖𝙨𝙚 𝙬𝙖𝙞𝙩 {remaining_time // 10} 𝙢𝙞𝙣𝙪𝙩𝙚𝙨 𝙖𝙣𝙙 {remaining_time % 10} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 𝙗𝙚𝙛𝙤𝙧𝙚 𝙩𝙧𝙮𝙞𝙣𝙜 𝙖𝙜𝙖𝙞𝙣 ⚠️⚠️ "
-                )
-                return
-
-        # Check attack count
-        if user_id not in user_attacks:
-            user_attacks[user_id] = 0
-
-        if user_attacks[user_id] >= DAILY_ATTACK_LIMIT:
-            bot.send_message(
-                message.chat.id,
-                f"𝙃𝙞 {message.from_user.first_name}, BHAI APKI AJ KI ATTACK LIMIT HOGYI HAI AB DIRECT KAL ANA  ✌️"
-            )
-            return
-
         # Check if the user has provided feedback after the last attack
         if user_id in user_attacks and user_attacks[user_id] > 0 and not user_photos.get(user_id, False):
             user_bans[user_id] = datetime.now() + BAN_DURATION  # Ban user for 2 hours
